@@ -1,0 +1,96 @@
+// .card {
+
+//   width: auto;
+
+// }
+
+// .custom-select {
+//   margin-left: 10px;
+//   margin-top: 10px;
+//   margin-right: 20px;
+//   width: 60%;
+// }
+
+// .btn {
+//   margin-top: 10px;
+// }
+
+// .msg {
+//   padding: 10px;
+// }
+// .myCard {
+//   width: 100%;
+//   min-height: 100px;
+//   padding: 20px;
+//   background-color: #b3b3b3;
+//   border-radius: 5px;
+// }
+
+// .report {
+//   text-align: center;
+//   color: orangered;
+//   margin-left: 10px;
+// }
+
+// .reportModel {
+//   // margin-top: 30%;
+//   text-align: center;
+// }
+
+// .modal-header{
+//   background-image: linear-gradient(to bottom right, #00012c, skyblue);
+
+// }
+
+$padding: 10px;
+$background-image: linear-gradient(to bottom right, #00012c, skyblue);
+
+@mixin property($margin-top, $width, $margin-right, $margin-left) {
+  width: $width;
+  margin-left: $margin-left;
+  margin-top: $margin-top;
+  margin-right: $margin-right;
+}
+
+.card {
+  width: auto;
+}
+
+.custom-select {
+  @include property(10px, 60%, 20px, 10px);
+
+  //   margin-left: 10px;
+  //   margin-top: 10px;
+  //   margin-right: 20px;
+  //   width: 60%;
+}
+
+.btn {
+  margin-top: $padding;
+}
+
+.msg {
+  padding: $padding;
+}
+.myCard {
+  width: 100%;
+  min-height: 100px;
+  padding: 20px;
+  background-color: #b3b3b3;
+  border-radius: 5px;
+}
+
+.report {
+  text-align: center;
+  color: orangered;
+  margin-left: $padding;
+}
+
+.reportModel {
+  // margin-top: 30%;
+  text-align: center;
+}
+
+.modal-header {
+  background-image: $background-image;
+}

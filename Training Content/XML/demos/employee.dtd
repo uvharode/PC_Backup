@@ -1,0 +1,10 @@
+<!ELEMENT employee (firstname,lastname,email)>  
+<!ELEMENT firstname (#PCDATA)>  
+<!ELEMENT lastname (#PCDATA)>  
+<!ELEMENT email (#PCDATA)>  
+
+<employee>
+<firstname>John</firstname>
+<lastname>Dsouza</lastname>
+<email>john@cyb.in</email>
+</employee>

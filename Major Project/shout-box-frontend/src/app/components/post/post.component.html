@@ -1,0 +1,177 @@
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="myCard standard-padding">
+        <form #f="ngForm" (ngSubmit)="onSubmitpost(f)">
+          <div class="form-group">
+          <textarea
+            class="textarea"
+            name="text"
+            [(ngModel)]="text"
+            rows="2"
+            placeholder="Whats on Your mind..."
+          ></textarea>
+          <hr class="hor-line" />
+          <p>{{selectedFile}}</p>
+          <div class="row">
+            <div class="col-md-4">
+              <input
+                type="file"
+                id="uploadImage"
+                name="multimedia"
+                (change)="fileEvent($event)"
+                accept="image/*"
+                hidden
+              />
+              <label id="lblimage" for="uploadImage">
+                <em class="fas fa-image"></em>
+                Image</label
+              >
+            </div>
+            <div class="col-md-4">
+              <input
+                type="file"
+                id="uploadAudio"
+                name="multimedia"
+                (change)="fileEvent($event)"
+                accept="audio/*"
+                hidden
+              />
+              <label id="lblAudio" for="uploadAudio">
+                <em class="fas fa-file-audio"></em> Audio</label
+              >
+            </div>
+            <div class="col-md-4">
+              <input
+                type="file"
+                id="uploadVideo"
+                name="multimedia"
+                (change)="fileEvent($event)"
+                accept="video/*"
+                hidden
+              />
+              <label id="lblVideo" for="uploadVideo">
+                <em class="fas fa-file-video"></em>
+                Video</label
+              >
+            </div>
+          </div>
+
+          <button type="submit" [disabled]="!f.valid"
+            class="btn btn-primary btn-lg float-right"
+            style="width: 100px"
+          >
+            Post <span class="fa fa-arrow-right"></span>
+          </button>
+        </div>
+        </form>
+        <br />
+        <br />
+      </div>
+      <!-- End of new post section -->
+      <br />
+
+      <div class="myCard" style="padding: 5px 0px 20px 0px">
+        <div class="container main-container">
+          <div *ngFor="let a of friendsPosts">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-1">
+                    <div class="rounded-circle pro-icon"></div>
+                  </div>
+                  <div class="col-md-11">
+                    <strong
+                      ><p class="heading">{{ a.user.firstname }}</p></strong
+                    >
+
+                  </div>
+                </div>
+                <hr />
+
+                <p class="card-text">
+                  {{ a.text == "undefined" ? " " : a.text }}
+                </p>
+                <div *ngIf="a.type === 'mp3'">
+                  <audio controls>
+                    <source
+                      src="{{ Path }}{{ a.multimedia }}"
+                      height="auto"
+                      width="100%"
+                    />
+                  </audio>
+                </div>
+                <div
+                  *ngIf="
+                    a.type === 'jpeg' || a.type === 'jpg' || a.type === 'png'
+                  "
+                >
+                  <img
+                    src="{{ Path }}{{ a.multimedia }}"
+                    accept="image/*"
+                    height="auto"
+                    width="100%"
+                    alt="images"
+                  />
+                </div>
+                <div *ngIf="a.type === 'mp4' || a.type === '3gp'">
+                  <video width="100%" height="auto" controls>
+                    <source
+                      src="{{ Path }}{{ a.multimedia }}"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+                <button
+                class="btn btn-primary pull-right"
+                (click)="likePost(a.id)" >
+                <span class="fas fa-thumbs-up"></span>  {{a.likes.length}}
+              </button>
+                <button
+                  class="btn btn-primary pull-right"
+                  (click)="comment(a.id)" >
+                  <span class="fas fa-comment"></span>
+
+                </button>
+                <button
+                    class="btn btn-danger btn-md myBtn"
+                    (click)="btnclick(a.id)"
+                    (click)="openReport()"
+                  >
+                  <span class="fa fa-exclamation-circle"></span>
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="myCard">
+        <h5><strong>People You May Know</strong></h5>
+        <div class="card" *ngFor="let u of users; let i = index">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <p class="heading">
+                  <span class="fa fa-user-circle"></span> {{ u.firstname }}
+                  {{ u.lastname }}
+
+                  <button
+                    (click)="addfriend(u.id, i)"
+                    class="float-right btn-primary"
+                  >
+
+                    <span *ngIf='!u.requestSent' class="fa fa-plus"></span>
+                    <span *ngIf='u.requestSent' class="fas fa-check"></span>
+                  </button>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+* for centering column - offset-md-2
+* for making form in one line i.e. text box and button in one line - form-inline
+*  

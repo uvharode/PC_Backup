@@ -1,0 +1,46 @@
+// .textarea {
+//     width: 70%;
+//     border: none;
+//     padding-left: 10px;
+//     border-radius:5px;
+//     background-color: lightgrey;
+//   }
+
+//   .modal-header{
+//     background-image: linear-gradient(to bottom right, #00012c, skyblue);
+//     color: white;
+
+//   }
+// //   .btn-primary{
+
+// //   }
+
+$background-image: linear-gradient(to bottom right, #00012c, skyblue);
+
+@mixin property(
+  $border,
+  $width,
+  $border-radius,
+  $padding-left,
+  $background-color
+) {
+  width: $width;
+  padding-left: $padding-left;
+  border: $border;
+  border-radius: $border-radius;
+  background-color: $background-color;
+}
+.textarea {
+  // width: 70%;
+  // border: none;
+  // padding-left: 10px;
+  // border-radius:5px;
+  // background-color: lightgrey;
+
+  @include property(none, 70%, 5px, 10px, lightgrey);
+}
+
+.modal-header {
+  background-image: $background-image;
+  color: white;
+}

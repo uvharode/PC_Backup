@@ -1,0 +1,14 @@
+<employee>
+  <firstname>John</firstname>
+  <lastname>Smith</lastname>
+</employee>
+
+///////XSD/////
+<xs:element name="employee">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="firstname" type="xs:string"/>
+      <xs:element name="lastname" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>

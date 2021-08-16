@@ -1,0 +1,174 @@
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="myCard">
+        <div class="row">
+          <div class="col-md-12" style="text-align: center">
+            <div
+              class="rounded-circle profile-image"
+              style="margin: auto"
+            ></div>
+            <strong style="margin-top: 30px; font-size: 20px">{{
+              this.profile_name
+            }}</strong
+            >&nbsp;
+
+            <button
+              style="border: none"
+              [ngClass]="{ 'hide-class': !loggedInUser }"
+              (click)="editBio()"
+            >
+              <span class="fa fa-edit"></span>
+            </button>
+
+            <div class="card">
+              <div *ngFor="let b of bio">
+                <div class="row standard-padding info">
+                  <p class="head-sub-heading">
+                    <span class="fa fa-briefcase"></span> {{ b.work }}
+                  </p>
+                  <p class="head-sub-heading">
+                    <span class="fa fa-university"></span> {{ b.college }}
+                  </p>
+                  <p class="head-sub-heading">
+                    <span class="fa fa-school"></span> {{ b.school }}
+                  </p>
+                  <p class="head-sub-heading">
+                    <span class="fa fa-location"></span> {{ b.native_place }}
+                  </p>
+                  <p class="head-sub-heading">
+                    <span class="fa fa-location-arrow"></span> {{ b.location }}
+                  </p>
+                </div>
+                <hr />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div
+    class="row standard-padding info"
+    *ngIf="isEditClicked"
+    [ngClass]="{ 'hide-class': IsBioUpdated }"
+  >
+    <div class="col-md-2">
+      <strang class="float-left">Work</strang>
+      <input type="text" class="myInput" name="work" [(ngModel)]="work" />
+    </div>
+    <div class="col-md-2">
+      <strang class="float-left">College</strang>
+      <input type="text" class="myInput" name="college" [(ngModel)]="college" />
+    </div>
+    <div class="col-md-2">
+      <strang class="float-left">School</strang>
+      <input type="text" class="myInput" name="school" [(ngModel)]="school" />
+    </div>
+    <div class="col-md-2">
+      <strang class="float-left">Location</strang>
+      <input
+        type="text"
+        class="myInput"
+        name="location"
+        [(ngModel)]="location"
+      />
+    </div>
+    <div class="col-md-2">
+      <strang class="float-left">Native Place</strang>
+      <input
+        type="text"
+        class="myInput"
+        name="native_place"
+        [(ngModel)]="native_place"
+      />
+    </div>
+    <div class="col-md-2">
+      <strang class="float-left">.</strang>
+      <button class="btn btn-primary">Update</button>
+    </div>
+  </div>
+</form>
+
+<br />
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 myCard">
+      <div (notify)="friendComponent($event)">
+        <div *ngFor="let a of posts | async">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                <em class="fas fa-user-circle"></em> {{ this.profile_name }}
+              </h5>
+
+              <p class="card-text">
+                {{ a.text == "undefined" ? " " : a.text }}
+              </p>
+              <div *ngIf="a.type === 'mp3'">
+                <audio controls>
+                  <source
+                    src="{{ Path }}{{ a.multimedia }}"
+                    height="auto"
+                    width="100%"
+                  />
+                </audio>
+              </div>
+              <div
+                *ngIf="
+                  a.type === 'jpeg' || a.type === 'jpg' || a.type === 'png'
+                "
+              >
+                <img
+                  src="{{ Path }}{{ a.multimedia }}"
+                  accept="image/*"
+                  height="auto"
+                  width="100%"
+                  alt="images"
+                />
+              </div>
+              <div *ngIf="a.type === 'mp4' || a.type === '3gp'">
+                <video width="100%" height="auto" controls>
+                  <source src="{{ Path }}{{ a.multimedia }}" type="video/mp4" />
+                </video>
+              </div>
+
+              <button
+              class="btn btn-primary pull-right"
+              (click)="likePost(a.id,a.user_id)" >
+              <span class="fas fa-thumbs-up"></span>  {{a.likes.length}}
+            </button>
+              <button
+                class="btn btn-primary pull-right"
+                (click)="comment(a.id)"
+              >
+                <span class="fas fa-comment"></span>
+              </button>
+
+              <button
+                class="btn btn-danger btn-md myBtn"
+                [ngClass]="{ 'hide-class': !loggedInUser }"
+                (click)="deletePost(a.id)"
+              >
+                <span class="fa fa-trash"></span>
+              </button>
+
+              <button
+                class="btn btn-danger btn-md myBtn"
+                (click)="btnclick(a.id)"
+                (click)="openReport()"
+                *ngIf="Data(a.user_id)"
+              >
+                <span class="fa fa-exclamation-circle"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

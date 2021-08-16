@@ -1,0 +1,18 @@
+PRODUCTDATA {
+font-family:Arial;
+font-size: 20pt;
+font-weight:bold;
+color:red;
+display:block;
+padding-top:6pt;
+padding-bottom:6pt;
+border: 3px dashed green;
+}
+PRICE  , DESCRIPTION, QUANTITY{
+font-family:Arial;
+font-size:10pt;
+color:teal;
+display:block;
+padding-top:2pt;
+padding-bottom:2pt
+}

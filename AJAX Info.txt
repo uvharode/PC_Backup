@@ -1,0 +1,19 @@
+* $(#id) - targetting the elemengt with #id.
+* keyup function - event trigger when the keyboard key is realise.
+
+***invali/empty upfront
+- add &resolveErrorFlag=1
+billing
+Horizon sku report
+search with manufacturing no.
+
+check Upfront and Arrears is empty or not
+
+***Subsrciption having multiple record
+We have to report it to Business, because we dont know which order we have to keep.
+check subscription type
+check which productid is not valid, so that we can makr void on it.
+Durable id is part no. without -
+How to mark void
+add void_ in script which we have to send for changing in data base
+if any id having remove keyword, they we can mark it void.

@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Shout Box</a>
+    <button class="navbar-toggler"  type="button" (click)="toggleNav()">
+    <span class="navbar-toggler-icon" id="btnss"></span>
+    </button>
+    <div class="collapse navbar-collapse " [ngClass]="{'show': isVisible}" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+
+      <a *ngIf="isLoggedIn()" class="navbar-brand" routerLink="home"
+        ><span class="fa fa-home"> </span> Home
+      </a>
+      <a *ngIf="isLoggedIn()" class="navbar-brand" routerLink="friends"
+        ><span class="fa fa-users"></span> Friends</a
+      >
+
+
+      <a *ngIf="isLoggedIn()" class="navbar-brand" (click)="yourProfile()"
+        ><span class="fa fa-user-circle"></span> Profile </a
+      >
+      <a *ngIf="isLoggedIn()" class="navbar-brand" (click)="logout()"
+        ><span class="fa fa-sign-out"></span> Logout</a
+      >
+    </div>
+  </div>
+</div>
+  
+</nav> 
+
+
+
+<!-- <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+   -->
+
+<router-outlet></router-outlet>
+

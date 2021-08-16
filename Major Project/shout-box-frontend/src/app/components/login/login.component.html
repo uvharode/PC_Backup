@@ -1,0 +1,113 @@
+<div class="container main-container">
+  <div class="row">
+      <div class="col-md-6 standard-padding">
+          <div class="card">
+              <div class="card">
+                  <h2 style="margin-left: 20px">Login</h2>
+                  <div *ngIf="loggedin" class="alert alert-success alert-dismissible fade show" role="alert">
+                      <strong>Success !!</strong> Your are Login successfully.
+                      <button (click)="closeloggedin()" type=" button " class="close" data-dismiss="alert " aria-label="Close ">
+            <span aria-hidden="true ">&times;</span>
+          </button>
+                  </div>
+                  <div *ngIf="notApproved" class="alert alert-primary alert-dismissible fade show" role="alert">
+                      <strong>Not Approved !!</strong> Your are not approved by admin, Please try again later.
+                      <button (click)="closenotApproved()" type=" button " class="close" data-dismiss="alert " aria-label="Close ">
+            <span aria-hidden="true ">&times;</span>
+          </button>
+                  </div>
+                  <div *ngIf="invalidCred" class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <strong>Failed !!</strong> Invalid Credentials, Please try again.
+                      <button (click)="closeinvalidCred()" type=" button " class="close" data-dismiss="alert " aria-label="Close ">
+            <span aria-hidden="true ">&times;</span>
+          </button>
+                  </div>
+
+                  <div *ngIf="notUser" class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <strong>Invalid !!</strong> Not a valid User.
+                      <button (click)="closenotUser()" type=" button " class="close" data-dismiss="alert " aria-label="Close ">
+            <span aria-hidden="true ">&times;</span>
+          </button>
+                  </div>
+
+                  <div class="card-body">
+                      <form [formGroup]="loginForm" (ngSubmit)="login()">
+                          <div class="row mb-12 form-group" [ngClass]="{
+                'has-error':
+                  loginForm.get('email')?.errors &&
+                  (loginForm.get('email')?.touched ||
+                    loginForm.get('email')?.dirty)
+              }">
+                              
+                              <div class="col-md-12">
+                                  <input type="email" name="email" formControlName="email" class="input" id="inputEmail3" placeholder="Email" required />
+                                  <span class="help-block" *ngIf="
+                    loginForm.get('email')?.errors &&
+                    (loginForm.get('email')?.touched ||
+                      loginForm.get('email')?.dirty)
+                  ">
+                  <span  class= "errMsg" *ngIf="loginForm.get('email')?.errors?.required"
+                    >Email is required</span
+                  >
+                </span>
+                                  <span class="help-block" *ngIf="loginForm.get('email')?.errors">
+                  <span class= "errMsg"
+                    *ngIf="
+                      loginForm.get('email')?.errors &&
+                      loginForm.get('email')?.dirty
+                    "
+                  >
+                    email is not correct</span
+                  >
+                </span>
+                              </div>
+
+                             
+                          </div>
+                          <div class="row mb-12 form-group" [ngClass]="{
+                'has-error':
+                  loginForm.get('password')?.errors?.required &&
+                  (loginForm.get('password')?.touched ||
+                    loginForm.get('password')?.dirty)
+              }">
+                             
+                              <div class="col-md-12">
+                                  <input type="password" name="password " formControlName="password" class="input" id="inputPassword3 " placeholder="Password " required />
+                                  <span class="help-block" *ngIf="
+                    loginForm.get('password')?.errors?.required &&
+                    (loginForm.get('password')?.touched ||
+                      loginForm.get('password')?.dirty)
+                  ">
+                  <span class= "errMsg" *ngIf="loginForm.get('password')?.errors?.required"
+                    >password is required</span
+                  > </span
+                ><br /><br />
+                <span class="float-right"
+                  ><a routerLink="register">Not Register ?</a></span
+                >
+              </div>
+             
+            </div>
+
+            <button
+              type="submit "
+              class="myButton"
+              [disabled]="!loginForm.valid"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 standard-padding right-section">
+    <div class="card right-card d-flex flex-column justify-content-center align-items-center">
+      
+      <p class="msg">SHOUT BOX</p>
+      <img class="w-75" src="/assets/images/login.jpg" />
+      <p class="text-white h4 text-center text-monospace mt-3">A Friend circle is a gift you give to yourself...!!</p>
+    </div>
+  </div>
+</div>
+</div>

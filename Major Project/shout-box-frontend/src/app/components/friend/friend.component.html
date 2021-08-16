@@ -1,0 +1,95 @@
+<!-- ---------------------------------------------------------------------------------------- -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div
+      class="col-md-8"
+      *ngIf="isPendingClicked"
+      [ngClass]="{ 'hide-class': isClicked }"
+    >
+      <div class="myCard">
+        <h5>Pending Requests</h5>
+        <hr style="margin-top: 0px" />
+        <div class="row standard-padding">
+          <div
+            class="col-md-3 card standard-padding"
+            *ngFor="let f of pending"
+            style="text-align: center"
+          >
+            <div
+              class="rounded-circle profile-image"
+              style="margin-bottom: 10px"
+            ></div>
+            <strong>
+              <a (click)="showPost(f)"
+                >{{ f.firstname }} {{ f.lastname }}</a
+              ></strong
+            ><br />
+            <div class="row standard-padding">
+              <div class="col-md-6" style="padding: 2px">
+                <button (click)="acceptRequest(f.id)" class="btn btn-primary">
+                  <span class="fa fa-check"></span>
+                </button>
+              </div>
+              <div class="col-md-6" style="padding: 2px">
+                <button (click)="removeFriend(f.id)" class="btn btn-danger">
+                  <span class="fa fa-times"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<!-- ---------------------------------------------------------------------------------------- -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="myCard standard-padding" *ngIf="!isPendingClicked">
+        <div class="row">
+          <div class="col-md-8">
+            <h5 style="margin-top: 5px">Pending Request</h5>
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-primary" (click)="showPendingFriends()">
+              Pending Request
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="myCard">
+        <h5>Friends</h5>
+        <hr style="margin-top: 0px" />
+        <div class="row standard-padding">
+          <div
+            class="col-md-3 card standard-padding"
+            *ngFor="let f of friends | async"
+            style="text-align: center"
+          >
+            <div
+              class="rounded-circle profile-image"
+              style="margin-bottom: 10px"
+            ></div>
+            <strong>
+              <a (click)="showPost(f)"
+                >{{ f.firstname }} {{ f.lastname }}</a
+              ></strong
+            ><br />
+            <button
+              class="btn btn-primary"
+              (click)="removeFriend(f.id)"
+              style="margin-top: 10px"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

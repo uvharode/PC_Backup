@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<abc:schema xmlns:abc="http://www.w3.org/2001/XMLSchema">
+
+<abc:element name="note">
+  <abc:complexType>
+    <abc:sequence>
+      <abc:element name="to">
+      <abc:complexType>
+      <abc:element name="toWhom" type="abc:string"/>
+      </abc:complexType>
+      </abc:element>
+      <abc:element name="from" type="abc:string"/>
+      <abc:element name="heading" type="abc:string"/>
+      <abc:element name="body" type="abc:string"/>
+      </abc:sequence>
+    <abc:attribute name="noteId" type="abc:number"/>
+    <abc:attribute name="noteId" type="abc:number"/>
+  </abc:complexType>
+</abc:element>
+
+</abc:schema>

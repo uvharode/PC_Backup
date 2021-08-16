@@ -1,0 +1,52 @@
+  {# -- #}       <div class="card bg-light mb-3 mt-3">
+
+      <div class="card-body">
+{# -- #}         <div class="card-header mb-3">All Articles</div>
+
+
+{% if articles %}
+      <table id="articles" class="table table-stripped">
+        <thead>
+         <tr>
+           <th>Article Title</th>
+         </tr>
+        </thead>
+        <tbody>
+          {% for art in article %}
+            <tr>
+              <td>{{ art.title }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+
+
+
+        {# {% if articles %}
+
+          Intrest
+
+          {% for art in articles %}
+          <tr>
+          <td>
+          <div class="card" style="width: 18rem;">
+                    <img class = "img-thumbnail" 
+                            src="{{ asset('uploads/content/' ~ art.image) }}" 
+                            alt="{{ art.image }}">
+                    </img>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+          </div>
+          <td>
+          <tr>
+          {% endfor %}
+        {% endif %} #}
+
+        </div>
+        </div>          {# -- #}
+        </div>        {# -- #}
+
+    </div>

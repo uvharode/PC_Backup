@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h4 class="modal-title report">comment</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="activeModal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngFor="let c of commentList">
+      <em class="fas fa-user-circle"></em>  <strong> {{ c.name }}</strong>
+
+      <p>{{ c.text }}</p>
+      <hr />
+    </div>
+    <form #f="ngForm" (ngSubmit)="onSubmitComment(f)">
+      <textarea
+        class="textarea"
+        name="text"
+        [(ngModel)]="text"
+        rows="1"
+        placeholder="Write your Comment..."
+      ></textarea>
+
+      <button class="btn btn-primary btn-sm float-right">Comment</button>
+    </form>
+  </div>

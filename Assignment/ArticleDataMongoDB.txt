@@ -1,0 +1,110 @@
+ db.userArticles.find().pretty();
+{
+        "_id" : ObjectId("60abbc46525500009f005d67"),
+        "title" : "R E D",
+        "author" : "Urvashi Harode",
+        "content" : "In color psychology, red provokes the strongest emotions of any color. While cool colors like green and blue are generally considered peaceful and calming, red is considered the warmest and most contradictory of the colors. In fact, this fiery hue has more opposing emotional associations than any other color: Red is linked to passion and love as well as power and anger.",
+        "image" : "red.webp"
+}
+{
+        "_id" : ObjectId("60abfc19525500009f005d6e"),
+        "title" : "Dreams !!!",
+        "author" : "Kalpana Harode",
+        "content" : "A dream is a succession of images, ideas, emotions, and sensations that usually occur involuntarily in the mind during certain stages of sleep. The content and function of dreams are not fully understood, although they have been a topic of scientific, philosophical and religious interest throughout recorded history.",
+        "image" : "dreams.jpg"
+}
+{
+        "_id" : ObjectId("60ac0c4f525500009f005d76"),
+        "title" : "Banker's Holiday.",
+        "author" : "Hira Harode",
+        "content" : "My last holiday was a five-day trip to Prague in the Czech Republic. I know Prague well because I lived there when I was at university, more than ten years ago.\r\n\r\nInstead of staying in a hotel, I stayed with one of my old friends. It was so much fun, and a little bit like my old life. I wanted to do all the same things I did in my university days, so I visited the university. It has changed a lot and looks more modern. I also went to the supermarket near my old house. I loved seeing all the different foods. I was really happy to find my favourite cheese and chocolate biscuits but they were a bit more expensive than I remember!",
+        "image" : "holiday.jpg"
+}
+{
+        "_id" : ObjectId("60ae0b2e762e00002a0056a5"),
+        "title" : "RamYug  !!",
+        "author" : "Siya Thakur",
+        "content" : "Ramyug is an Indian web series directed by Kunal Kohli. The series was released on MX Player on 6 May 2021. It stars Diganth Manchale, Akshay Dogra, Aishwarya Ojha, Kabir Duhan Singh and Vivan Bhathena in the lead roles. The series is based on an adaptation of Ramayana. It is made under the banner of R & R Films and produced by Niharika Kotwal and Ravina Kohli.",
+        "image" : "RamYug.jpg"
+}
+{
+        "_id" : ObjectId("60ae1020762e00002a0056a7"),
+        "title" : "C O V I D - 1 9",
+        "author" : "Rupal Barbate",
+        "content" : "Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.\r\nMost people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.\r\nHOW IT SPREADS\r\nThe virus that causes COVID-19 is mainly transmitted through droplets generated when an infected person coughs, sneezes, or exhales. These droplets are too heavy to hang in the air, and quickly fall on floors or surfaces.\r\nYou can be infected by breathing in the virus if you are within close proximity of someone who has COVID-19, or by touching a contaminated surface and then your eyes, nose or mouth.",
+        "image" : "covid.jpg"
+}
+{
+        "_id" : ObjectId("60ae1819762e00002a0056a9"),
+        "title" : "Ice - Cream",
+        "author" : "Pranal Patil",
+        "content" : "Ice cream (derived from earlier iced cream or cream ice)[1] is a sweetened frozen food typically eaten as a snack or dessert. It may be made from dairy milk or cream and is flavoured with a sweetener, either sugar or an alternative, and any spice, such as cocoa or vanilla. It can also be made by whisking a flavored cream base and liquid nitrogen together. Colorings are usually added, in addition to stabilizers. The mixture is stirred to incorporate air spaces and cooled below the freezing point of water to prevent detectable ice crystals from forming. The result is a smooth, semi-solid foam that is solid at very low temperatures (below 2 °C or 35 °F). It becomes more malleable as its temperature increases.",
+        "image" : "ice-cream.jpg"
+}
+{
+        "_id" : ObjectId("60b0a44d02020000870023e3"),
+        "title" : "BTS",
+        "author" : "Prashant Kumar",
+        "content" : "BTS - Bang tan Sonyeondan), also known as the Bangtan Boys, is a seven-member South Korean boy band that began formation in 2010 and debuted in 2013 under Big Hit Entertainment.[4] The septet—composed of Jin, Suga, J-Hope, RM, Jimin, V, and Jungkook—co-writes and co-produces much of their own output. Originally a hip hop group, their musical style has evolved to include a wide range of genres. Their lyrics, often focused on personal and social commentary, touch on the themes of mental health, troubles of school-age youth and coming-of-age, loss, the journey towards loving oneself, and individualism. Their work features references to literature and psychological concepts and includes an alternative universe storyline. The group has released several albums and performed on several world tours.",
+        "image" : "bts-art.jpg"
+}
+{
+        "_id" : ObjectId("60b10c019a4e000094000173"),
+        "title" : "Core PHP vs PHP Framework",
+        "author" : "Amey Khaire",
+        "content" : "How are web applications made?\r\n\r\nWeb applications are made of tools called frameworks and programming languages, and in the world of frameworks PHP frameworks needs no introduction.\r\n\r\nHow do these frameworks run?\r\n\r\nFrameworks run on programming languages, which stand as the backbone to a framework.\r\n\r\nTo be precise, a framework is just a collection of different types of programming languages, libraries, design patterns etc. which make the process of building web applications much faster.\r\n\r\nSo why are we comparing Core PHP which is a basic PHP programming language and a PHP Framework?\r\n\r\nBecause they both are capable of building amazing web applications, and in this blog we are going to find out which one of these is better for building web applications.\r\n\r\nSo let’s understand their capabilities.\r\n\r\nThere a many differences between both PHP web development and Core web PHP development even though they are from a single parent the PHP programming language.\r\n\r\nHow different is Core PHP from PHP Frameworks?\r\n\r\nCore PHP is a very basic PHP programming language; it is used to create dynamic web pages.\r\n\r\nDon’t worry about what’s a dynamic web page, there are basically two types of web applications Dynamic and Static, but more about that later. Or actually Learn here.\r\n\r\nCore PHP works without any extra library, which a PHP framework cannot, so it is very important to learn core of principle PHP programming to create dynamic web applications.\r\n\r\nCore PHP uses the purest form of PHP script, a developer needs to know the language thoroughly in order to write a clear and concise code using core PHP.",
+        "image" : "php.jpg"
+}
+{
+        "_id" : ObjectId("60b9be5b700b000012006fb3"),
+        "title" : "Attitude !!",
+        "author" : "Pratiksha Ronghre",
+        "content" : "In psychology, attitude is a psychological construct, a mental and emotional entity that inheres in, or characterizes a person.[1] They are complex and are an acquired state through experiences. It is an individual's predisposed state of mind regarding a value and it is precipitated through a responsive expression towards oneself,[2] a person, place, thing, or event (the attitude object) which in turn influences the individual's thought and action. Prominent psychologist Gordon Allport described this latent psychological construct as \"the most distinctive and indispensable concept in contemporary social psychology.\"[3] Attitude can be formed from a person's past and present.[3] Key topics in the study of attitudes include attitude strength, attitude change, consumer behavior, and attitude-behavior relationships.",
+        "image" : "attitude.png"
+}
+{
+        "_id" : ObjectId("60bd2bc485740000600072f2"),
+        "title" : "Rock-a-bye Baby",
+        "author" : "Pihu Mehta",
+        "content" : "It was a beautiful afternoon. A mother took her little baby and her older son to their garden for a picnic. Her older son carried the picnic basket while she pushed the baby in a stroller.\r\n\r\nThey found a nice spot under a big tree. Then the mother searched for a strong tree branch.\r\n\r\nShe found a strong branch and tied the cradle to it. She placed the baby inside. The cradle rocked steadily back and forth as the wind blew. The baby slept soundly.\r\n\r\nThe mother and her older son enjoyed the picnic. Later that afternoon, they packed their things and untied the cradle. After the enjoyment of this picnic, they decided to leave the picnic spot. All of them took all their things and went home feeling happy and well rested.\r\n\r\nMoral of the story :\r\n\r\nSometimes simple relaxation is good for you.",
+        "image" : "rain.jpg"
+}
+{
+        "_id" : ObjectId("60bd3d788574000060007306"),
+        "title" : "Sleep !!",
+        "author" : "Queen Rai",
+        "content" : "Sleep is an essential function1 that allows your body and mind to recharge, leaving you refreshed and alert when you wake up. Healthy sleep also helps the body remain healthy and stave off diseases. Without enough sleep, the brain cannot function properly. This can impair your abilities2 to concentrate, think clearly, and process memories.\r\n\r\nMost adults require between seven and nine hours3 of nightly sleep. Children and teenagers need substantially more sleep, particularly if they are younger than five years of age. Work schedules, day-to-day stressors, a disruptive bedroom environment, and medical conditions can all prevent us from receiving enough sleep. A healthy diet and positive lifestyle habits can help ensure an adequate amount of sleep each night – but for some, chronic lack of sleep may be the first sign of a sleep disorder.",
+        "image" : "sleep.jpg"
+}
+{
+        "_id" : ObjectId("60bd90dc351d00000e007b13"),
+        "title" : "Dipawali 2020",
+        "author" : "Diya Mais",
+        "content" : "Diwali, also known as Deepawali, is the Hindu festival of lights which is celebrated by Indians all over the globe. Deepavali, which translates as ‘a row of lights’ is one of the most significant of all Hindu festivals and is celebrated over a period of 5 days. It is observed on the 15th day of the month of Kartika and in accordance with the Hindu lunar calendar, this month is considered the holiest. This year, Diwali will be celebrated on November 14.\r\nDiwali 2020: History and significance\r\n\r\nDiwali is not only significant because of its massive popularity and brilliant displays of fireworks but also because it symbolises the victory of light over darkness, of good over evil and of knowledge over ignorance. On this day, diyas, candles and lamps are placed all around the house, to ‘light’ the way to knowledge and victory. Each house is decorated with various assortments of coloured lights and diyas. The entire country is bathed in the soft glow of light and warmth emanating from every household, making it a truly wondrous sight to behold.\r\n\r\nThe celebration of Diwali also serves as a cleansing ritual, one that signifies letting go of all of the past year’s worries and troubles and stepping into the light. In the days leading up to Diwali, families get together to clean, renovate and decorate their respective households and workplaces with rangolis and diyas. Diwali marks the onset of winter and the beginning of all things new, both in nature and humanity.",
+        "image" : "diwali.webp"
+}
+{
+        "_id" : ObjectId("60bd9c34351d00000e007b1c"),
+        "title" : "Cybage Software",
+        "author" : "Queen Rai",
+        "content" : "Cybage Software Pvt. Ltd. (formerly Cyberage) is an information technology consulting company founded in 1995, located in Kalyani Nagar, Pune, India. The company provides software application development and maintenance, digital services, UX design, content services, and other support services, with development centers in Pune, Hyderabad and Gandhinagar in India. It also has offices in the United States, Canada, United Kingdom, the Netherlands, Germany, Singapore, Japan, and Australia.\r\nIn 1995, CEO and MD, Arun Nathani, with co-founder and COO Deepak Nathani (retired in 2016), founded Cybage Software to develop The CyberAge Raider[10] for the global market.\r\n\r\nIn August 1996, the company created this tool on a 32-bit browser, beta version of Windows 95.\r\n\r\nIn 1997, Cybage switched to offshore software development services and implemented ODC (Offshore Development Center).\r\n\r\nName change: The company changed its name from Cyberage to Cybage Software on 14 September 2000.\r\n\r\nIn 2013 Cybage became a SAP PartnerEdge Application Development Program partner.\r\n\r\nLogo change: In January 2018, Cybage announced the launch of its new logo as part of a new brand identity initiative.\r\n\r\nCurrently, Cybage serves the following industry verticals:\r\n\r\n* Media & Entertainment\r\n* Travel & Hospitality\r\n* Technology\r\n* Online Retail/ e-Commerce\r\n* Healthcare & Life Sciences\r\n* Supply Chain & Logistics\r\n* Marketing Services\r\n* Fin-Tech\r\n* Real-Tech\r\n* Edu-Tech",
+        "image" : "cybage-1.jpg"
+}
+{
+        "_id" : ObjectId("60bdd71f351d00000e007b28"),
+        "author" : "UV",
+        "user" : ObjectId("60bdd2a2351d00000e007b27")
+}
+{
+        "_id" : ObjectId("60bdd877351d00000e007b2c"),
+        "author" : "UV",
+        "user" : ObjectId("60bdd2a2351d00000e007b27")
+}
+{
+        "_id" : ObjectId("60bddb3e351d00000e007b2e"),
+        "title" : "Film Making",
+        "author" : "Anupama Sharma",
+        "content" : "Filmmaking (or, in any context, film production) is the process by which a film is made. Filmmaking involves a number of complex and discrete stages including an initial story, idea, or commission, through screenwriting, casting, shooting, sound recording and pre-production, editing, and screening the finished product before an audience that may result in a film release and an exhibition. Filmmaking takes place in many places around the world in a range of economic, social, and political contexts, and using a variety of technologies and cinematic techniques.",
+        "image" : "film-making.jpg",
+        "user" : ObjectId("60bddabc351d00000e007b2d")
+}

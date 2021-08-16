@@ -1,0 +1,77 @@
+<div class="modal-header">
+  <h4 class="modal-title report">Report</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div>
+    <div class="card">
+      <div class="myCard standard-padding">
+        <div
+          *ngIf="alreadyReported"
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+        >
+          <strong>Already Reported !!</strong> Your already Reported this post.
+          <button
+            (click)="ReportedAlready()"
+            type=" button "
+            class="close"
+            data-dismiss="alert "
+            aria-label="Close "
+          >
+            <span aria-hidden="true ">&times;</span>
+          </button>
+        </div>
+        <div
+          *ngIf="successfullyReported"
+          class="alert alert-success alert-dismissible fade show"
+          role="alert"
+        >
+          <strong>Success !!</strong> Thanks for letting us know, we will take
+          action against it.
+          <button
+            (click)="SuccessfullyReported()"
+            type=" button "
+            class="close"
+            data-dismiss="alert "
+            aria-label="Close "
+          >
+            <span aria-hidden="true ">&times;</span>
+          </button>
+        </div>
+        <p class="msg">Why are you reporting this post?</p>
+        <form #userPost="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <select
+              class="custom-select"
+              name="issue"
+              id="report"
+              [(ngModel)]="issue"
+              required
+            >
+        
+              <option *ngFor="let issue of issues">
+                {{ issue }}
+              </option>
+            </select>
+
+            <button
+              type="submit"
+              [disabled]="!userPost.valid"
+              class="btn btn-danger"
+            >
+              Report
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

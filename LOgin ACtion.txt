@@ -1,0 +1,118 @@
+/**
+ * @Route("/login", name="app_login")
+ */
+public function loginAction(Request $request, DocumentManager $dm)
+{
+    $email = $request->request->get('email');
+    $password = $request->request->get('password');
+
+    $factory = $this->get('security.encoder_factory');
+
+    $user = $dm->getRepository(User::class)->findOneBy(array('email' => $email));
+
+    if(!$user){
+        return new Response('Username doesnt exists');
+    }
+
+    $encoder = $factory->getEncoder($user);
+    $salt = $user->getSalt();
+
+    if(!$encoder->isPasswordValid($user->getPlainPassword(), $password, $salt)) {
+        return new Response(
+            'Username or Password not valid.');
+        }
+
+        $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
+        $this->get('security.token_storage')->setToken($token);
+
+        $this->get('session')->set('_security_main', serialize($token));
+
+        $event = new InteractiveLoginEvent($request, $token);
+        $this->get("event_dispatcher")->dispatch("security.interactive_login", $event);
+        
+        // return new Response(
+        //     'Welcome '. $user->getUsername());
+            return $this->render('Security/login.html.twig');
+
+
+}
+-----------------------------------
+
+ //----------
+            $token = new UsernamePasswordToken($user->getEmail(),
+                         $user->getPlainPassword(),
+                        "public", $user->getRoles());
+            
+            $this->get("security.token_storage")->setToken($token);
+
+            $session = $request->getSession();
+            if (!$request->hasPreviousSession()) {
+                $request->setSession($session);
+                $request->getSession()->start();
+                $request->cookies->set($request->getSession()->getName(), $request->getSession()->getId());
+            }
+    
+            $session->set(Security::LAST_USERNAME, $user->getEmail());
+    
+            // Authenticate user
+            $authManager->authenticate($token);
+            $sessionStrategy->onAuthentication($request, $token);
+    
+            // For older versions of Symfony, use "security.context" here
+            $tokenStorage->setToken($token);
+            $session->set('_security_main', serialize($token));
+    
+            $session->remove(Security::AUTHENTICATION_ERROR);
+            $session->remove(Security::LAST_USERNAME);
+    
+            // Fire the login event
+            $event = new InteractiveLoginEvent($request, $token);
+            $this->get('event_dispatcher')->dispatch($event, SecurityEvents::INTERACTIVE_LOGIN);
+    
+            //-----------
+
+            // $request->getSession()->set('user_is_author', true);
+            // $this->addFlash('success', 'You are now an author.');
+
+
+---------------------
+
+public function CreateArticle(Request $request, DocumentManager $dm )
+    {
+         $article= new Articles();
+        $form = $this->createForm(ArticleType::class, $article);
+   // die("subjhjhj");
+    $form->handleRequest($request);
+       if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $uploadedFile*/
+            $= $form->get('imageFile')->getData();
+
+            if ($uploadedFile) {
+                $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+                
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$uploadedFile->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $uploadedFile->move(
+                        $this->getParameter('upload_image'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $article->setImageUpload($newFilename);
+            }
+
+
+            return $this->render('Account/save.html.twig',array('articles'=>$articles));
+        }
+ return $this->render('Account/article.html.twig',[
+        'form' => $form->createView()
+    ]);
+--------------------------------------------------------------
+1. Login issue
+2. Image issue

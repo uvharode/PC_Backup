@@ -1,0 +1,149 @@
+// body {
+//   font-family: "Montserrat";
+// }
+
+// .main-container {
+//   margin-top: 50px;
+//   background-color: #ffffff;
+//   box-shadow: 1px 1px 10px;
+//   width: 50%;
+// }
+
+// .card {
+//   width: 100%;
+//   height: auto;
+//   border-radius: 0px;
+//   border: 0px solid;
+//   padding: 20px;
+//   min-height: 200px;
+// }
+
+// .errMsg {
+//   color: red;
+// }
+
+// .border {
+//   border: 1px solid;
+// }
+
+// .standard-padding {
+//   padding: 20px;
+// }
+
+// .input {
+//   height: 50px;
+//   width: 100%;
+//   border: none;
+//   border-bottom: 3px solid grey;
+//   padding-left: 10px;
+//   margin-top: 10px;
+// }
+
+// input:focus {
+//   outline: none;
+// }
+
+// .right-section {
+//   padding-left: 0px;
+// }
+
+// .right-card {
+//   min-height: 500px;
+//   // background-imgae:url("");
+//   background-color: red;
+//   /* For browsers that do not support gradients */
+//   background-image: linear-gradient(to bottom right, #00012c, skyblue);
+// }
+
+// .myButton {
+//   width: 200px;
+//   border-radius: 20px;
+//   padding: 10px;
+//   background-image: linear-gradient(to bottom right, #00012c, skyblue);
+//   color: white;
+//   font-weight: bold;
+//   border: 0px solid;
+// }
+
+$background-image: linear-gradient(to bottom right, #00012c, skyblue);
+
+@mixin property($height, $width, $border) {
+  width: $width;
+  height: $height;
+  border: $border;
+}
+
+@mixin property1($padding, $border-radius) {
+  padding: $padding;
+  border-radius: $border-radius;
+}
+body {
+  font-family: "Montserrat";
+}
+
+.main-container {
+  margin-top: 50px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 10px;
+  width: 50%;
+}
+
+.card {
+  @include property(auto, 100%, 0px solid);
+  // width: 100%;
+  // height: auto;
+  @include property1(20px, 0px);
+  // border-radius: 0px;
+  // // border: 0px solid;
+  // padding: 20px;
+  min-height: 200px;
+}
+
+.errMsg {
+  color: red;
+}
+
+.border {
+  border: 1px solid;
+}
+
+.standard-padding {
+  padding: 20px;
+}
+
+.input {
+  @include property(50px, 100%, none);
+  // height: 50px;
+  // width: 100%;
+  // border: none;
+  border-bottom: 3px solid grey;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.right-section {
+  padding-left: 0px;
+}
+
+.right-card {
+  min-height: 500px;
+  // background-imgae:url("");
+  background-color: red;
+  /* For browsers that do not support gradients */
+  background-image: $background-image;
+}
+
+.myButton {
+  width: 200px;
+  @include property1(10px, 20px);
+  // border-radius: 20px;
+  // padding: 10px;
+  background-image: $background-image;
+  color: white;
+  font-weight: bold;
+  border: 0px solid;
+}

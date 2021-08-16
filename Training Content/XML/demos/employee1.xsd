@@ -1,0 +1,16 @@
+<?xml version="1.0"?>  
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://www.javatpoint.com" xmlns:r="http://www.javatpoint.com"  
+elementFormDefault="qualified">  
+  <r:javav>
+  </r:java>
+<xs:element name="employee">  
+  <xs:complexType>  
+    <xs:sequence>  
+      <xs:element name="firstname" type="xs:string"/>  
+      <xs:element name="lastname" type="xs:integer"/>  
+      <xs:element name="email" type="xs:string"/>  
+    </xs:sequence>  
+  </xs:complexType>  
+</xs:element>  
+  
+</xs:schema>

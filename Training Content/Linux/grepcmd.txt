@@ -1,0 +1,55 @@
+cat filename.txt
+cp existingfile newfilename
+grep "string" filename
+grep -i "string" filename
+grep "line.*empty" filename
+
+$ grep "lines.*empty" demo_file
+Two lines above this line is empty.
+From documentation of grep: A regular expression may be followed by one of several repetition operators:
+
+? The preceding item is optional and matched at most once.
+* The preceding item will be matched zero or more times.
++ The preceding item will be matched one or more times.
+{n} The preceding item is matched exactly n times.
+{n,} The preceding item is matched n or more times.
+{,m} The preceding item is matched at most m times.
+{n,m} The preceding item is matched at least n times, but not more than m times.3
+
+
+5. Checking for full words, not for sub-strings using grep -w
+$ grep -iw "is" demo_file
+THIS LINE IS THE 1ST UPPER CASE LINE IN THIS FILE.
+this line is the 1st lower case line in this file.
+Two lines above this line is empty.
+And this is the last line.
+
+6.1 Display N lines after match
+$ grep -A 3 -i "example" demo_text
+
+6.2 Display N lines before match
+$ grep -B 2 "single WORD" demo_text
+Example to show the difference between WORD and word
+
+6.3 Display N lines around match
+$ grep -C 2 "Example" demo_text
+word - word consists of a sequence of letters, digits and underscores.
+
+8. Searching in all files recursively using grep -r
+$ grep -r "ramesh" *
+
+9. Invert match using grep -v
+$ grep -v "go" demo_text
+
+
+11. Counting the number of matches using grep -c
+
+When you want to count that how many lines matches the given pattern/string, then use the option -c.
+
+Syntax:
+grep -c "pattern" filename
+
+12. Give list of file dat  matches the pattern
+$ grep -l t mydoc*
+
+

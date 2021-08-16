@@ -1,0 +1,13 @@
+<email>
+    <to>
+    <cc>Sam</cc>
+    <bcc>Robin</bcc>
+    </to>
+    <message count=2>Welcome &gt; to XML </message>
+    <message count=1>Welcome to XML app </message>
+</email>
+
+<note>
+<data>sdfsdfsdfsdf
+</note>
+</data>

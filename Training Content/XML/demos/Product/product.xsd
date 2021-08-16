@@ -1,0 +1,27 @@
+<abc:schema xmlns:abc="http://www.w3.org/2001/XMLSchema">
+  <abc:element name="PRODUCTDATA">
+    <abc:complexType>
+      <abc:sequence>
+        <abc:element name="PRODUCT" maxOccurs="unbounded" minOccurs="0">
+          <abc:complexType>
+            <abc:sequence>
+              <abc:element type="abc:string" name="PRODUCTNAME"/>
+              <abc:element type="abc:string" name="DESCRIPTION"/>
+              <abc:element name="PRICE">
+                 <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="100"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+
+               <abc:element type="abc:short" name="QUANTITY"/>
+            </abc:sequence>
+            <abc:attribute type="abc:string" name="PRODID" use="optional" />
+            <abc:attribute type="abc:string" name="CATEGORY" use="optional"/>
+          </abc:complexType>
+        </abc:element>
+      </abc:sequence>
+    </abc:complexType>
+  </abc:element>
+</abc:schema>
